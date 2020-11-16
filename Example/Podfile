@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HoloTableViewDiffPlugin_Example' do
+  pod 'HoloTableViewDiffPlugin', :path => '../'
+
+  target 'HoloTableViewDiffPlugin_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
