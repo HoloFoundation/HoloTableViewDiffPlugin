@@ -9,7 +9,26 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## What's for
+
+HoloTableViewDiffPlugin is a plugin for [HoloTableView](https://github.com/gonghonglou/HoloTableView) framework, which provide the diff reload actions support for [DeepDiff](https://github.com/onmyway133/DeepDiff).
+
+To use it, simply make sure you use DeepDiff and import this plugin.
+
+## Usage
+
+```swift
+let tableView = UITableView.init(frame: self.view.bounds, style: .plain)
+self.view.addSubview(tableView)
+
+tableView.holo_makeRows { (make) in
+    for item in [Int]() {
+        _ = make.row(TableViewCell.self).model(item).height(60)
+    }
+}
+tableView.reload()
+```
+If the tableView has been reload and then you want to diff reload, you need to perform `tableView.stored()` before `tableView.holo_makeRows{}`.
 
 ## Installation
 
