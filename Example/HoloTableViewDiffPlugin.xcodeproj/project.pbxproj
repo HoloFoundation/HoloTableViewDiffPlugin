@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		759AF704256E8C8B00FA79D2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759AF703256E8C8B00FA79D2 /* TableViewCell.swift */; };
 		7A6FE990745B98C0B2B4678B /* Pods_HoloTableViewDiffPlugin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D92ED65D8FD3EE0BC87E6A4 /* Pods_HoloTableViewDiffPlugin_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,10 +42,11 @@
 		607FACE51AFB9204008FA782 /* HoloTableViewDiffPlugin_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloTableViewDiffPlugin_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		61854DF05EF1080C7E32644F /* HoloTableViewDiffPlugin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HoloTableViewDiffPlugin.podspec; path = ../HoloTableViewDiffPlugin.podspec; sourceTree = "<group>"; };
-		A7A6DE113771C1C7DBE7DB31 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		61854DF05EF1080C7E32644F /* HoloTableViewDiffPlugin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HoloTableViewDiffPlugin.podspec; path = ../HoloTableViewDiffPlugin.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		759AF703256E8C8B00FA79D2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A7A6DE113771C1C7DBE7DB31 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B0250721809B5160E633884A /* Pods_HoloTableViewDiffPlugin_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoloTableViewDiffPlugin_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAE5FA85F196C2B5C23C3B79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BAE5FA85F196C2B5C23C3B79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C47E3D5894ED7E4A372DF042 /* Pods-HoloTableViewDiffPlugin_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloTableViewDiffPlugin_Example.release.xcconfig"; path = "Target Support Files/Pods-HoloTableViewDiffPlugin_Example/Pods-HoloTableViewDiffPlugin_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EAA16BCE3FD3B17ACEEF9669 /* Pods-HoloTableViewDiffPlugin_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloTableViewDiffPlugin_Example.debug.xcconfig"; path = "Target Support Files/Pods-HoloTableViewDiffPlugin_Example/Pods-HoloTableViewDiffPlugin_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				759AF703256E8C8B00FA79D2 /* TableViewCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -156,7 +159,6 @@
 				17F5815310D36C0F09CC777C /* Pods-HoloTableViewDiffPlugin_Tests.debug.xcconfig */,
 				35A3500B5962418593A0EE43 /* Pods-HoloTableViewDiffPlugin_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -313,10 +316,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HoloTableViewDiffPlugin_Example/Pods-HoloTableViewDiffPlugin_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
+				"${BUILT_PRODUCTS_DIR}/HoloTableView/HoloTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/HoloTableViewDiffPlugin/HoloTableViewDiffPlugin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HoloTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HoloTableViewDiffPlugin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759AF704256E8C8B00FA79D2 /* TableViewCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
