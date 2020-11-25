@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         self.tableView.holo_removeAllSections()
         self.tableView.holo_makeRows { (make) in
             DataSet.generateItems().forEach { (item) in
-                _ = make.row(TableViewCell.self).height(60).willDisplayHandler { (cell, model) in
+                _ = make.row(TableViewCell.self).height(80).willDisplayHandler { (cell, model) in
                     guard let cell = cell as? TableViewCell else { return }
                     cell.configTitle("\(item)")
                 }.diffId(item)

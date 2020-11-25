@@ -10,10 +10,10 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.label.frame = CGRect(x: 0, y: 0, width: 320, height: 40)
+        self.label.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
         self.contentView.addSubview(self.label)
     }
     
