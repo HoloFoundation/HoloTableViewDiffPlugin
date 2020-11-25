@@ -23,9 +23,21 @@ self.view.addSubview(tableView)
 
 tableView.holo_makeRows { (make) in
     for item in [Int]() {
-        _ = make.row(TableViewCell.self).model(item).height(60)
+        _ = make.row(TableViewCell.self).model(item).diffId(item)
     }
 }
+tableView.reloadData()
+
+// diff reload
+tableView.stored()
+
+tableView.holo_removeAllSections()
+tableView.holo_makeRows { (make) in
+    for item in [Int]() {
+        _ = make.row(TableViewCell.self).model(item).diffId(item)
+    }
+}
+
 tableView.reload()
 ```
 If the tableView has been reload and then you want to diff reload, you need to perform `tableView.stored()` before `tableView.holo_makeRows{}`.
