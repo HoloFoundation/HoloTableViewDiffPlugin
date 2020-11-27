@@ -6,16 +6,14 @@ PODS:
     - HoloTableView (~> 2.2)
 
 DEPENDENCIES:
-  - HoloTableView (from `../../HoloTableView`)
   - HoloTableViewDiffPlugin (from `../`)
 
 SPEC REPOS:
   trunk:
     - DeepDiff
+    - HoloTableView
 
 EXTERNAL SOURCES:
-  HoloTableView:
-    :path: "../../HoloTableView"
   HoloTableViewDiffPlugin:
     :path: "../"
 
@@ -24,6 +22,6 @@ SPEC CHECKSUMS:
   HoloTableView: 9d74662942f532d3dc988db1e435e971fe8c0081
   HoloTableViewDiffPlugin: 0cd53a6537253d01a667b74d1d81a70a66f79492
 
-PODFILE CHECKSUM: 5cf55d0ab5c7114537c96eb339413f91c60ed03c
+PODFILE CHECKSUM: 73c7339d9ea5d31bdb12c1707bac9239230fdcfe
 
 COCOAPODS: 1.9.3
