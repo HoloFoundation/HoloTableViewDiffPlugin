@@ -1,7 +1,7 @@
 PODS:
   - DeepDiff (2.3.1)
   - HoloTableView (2.3.0)
-  - HoloTableViewDiffPlugin (0.1.0):
+  - HoloTableViewDiffPlugin (0.2.0):
     - DeepDiff (~> 2.3)
     - HoloTableView (~> 2.3)
 
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DeepDiff: e5ae6c50d0321568e4508cec5930b9f10bb293fc
   HoloTableView: 26c804389842c09b292c0b5de1e5026087091e83
-  HoloTableViewDiffPlugin: b5a48ec52b53e52a60becae3a23d98286ccbaf44
+  HoloTableViewDiffPlugin: 00dd8f9be006b3c7e9863559d8cff94f15e53d3f
 
 PODFILE CHECKSUM: 73c7339d9ea5d31bdb12c1707bac9239230fdcfe
 
