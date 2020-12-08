@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-  s.dependency 'HoloTableView', '~> 2.2'
+  s.dependency 'HoloTableView', '~> 2.3'
   s.dependency 'DeepDiff', '~> 2.3'
   
 end

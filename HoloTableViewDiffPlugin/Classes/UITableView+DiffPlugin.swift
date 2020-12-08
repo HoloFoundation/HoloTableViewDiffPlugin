@@ -23,30 +23,20 @@ public extension UITableView {
         updateData: (() -> Void)? = nil,
         completion: ((Bool) -> Void)? = nil) {
         
-        var section: HoloTableSection?
-        var index = 0
-        
-        if sectionTag == nil {
-            section = self.holo_proxy.proxyData.sections.first
-            index = 0
-        } else {
-            section = self.holo_proxy.proxyData.section(withTag: sectionTag)
-            if let section = section, let idx = self.holo_proxy.proxyData.sections.firstIndex(of: section) {
-                index = idx
-            }
-        }
-        
-        if section == nil {
-            debugPrint("[HoloTableView] No found a section with the tag: \(sectionTag ?? "nil").")
+        guard let section = self.holo_proxy.proxyData.section(withTag: sectionTag),
+              let index = self.holo_proxy.proxyData.sections.firstIndex(of: section) else {
+            debugPrint("[HoloTableViewDiffPlugin] No found a section with the tag: \(sectionTag ?? "nil").")
             return
         }
         
-        var oldItems = [HoloTableRow]()
-        if let diffOldData = self.diffOldData, diffOldData.count > index, let items = diffOldData[index].rows {
-            oldItems = items
+        var oldItems: [HoloTableRow]
+        if let diffOldData = self.diffOldData, diffOldData.count > index {
+            oldItems = diffOldData[index].rows
+        } else {
+            oldItems = [HoloTableRow]()
         }
-        let items = section?.rows ?? [HoloTableRow]()
-        let changes = diff(old: oldItems, new: items)
+        let newItems = section.rows
+        let changes = diff(old: oldItems, new: newItems)
         
         self.reload(changes: changes,
                     section: index,
