@@ -11,10 +11,20 @@ import HoloTableView
 
 public extension UITableView {
     
+    /// Stored old sections data
     func stored() {
         self.diffOldData = self.holo_proxy.proxyData.sections
     }
     
+    /// Animate reload in a batch update
+    ///
+    /// - Parameters:
+    ///   - sectionTag: Tag of the section that all calculated IndexPath belong
+    ///   - insertionAnimation: The animation for insert rows
+    ///   - deletionAnimation: The animation for delete rows
+    ///   - replacementAnimation: The animation for reload rows
+    ///   - updateData: Update your data source model
+    ///   - completion: Called when operation completes
     func reload (
         sectionTag: String? = nil,
         insertionAnimation: UITableView.RowAnimation = .automatic,
