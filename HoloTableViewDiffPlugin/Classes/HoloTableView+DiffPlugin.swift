@@ -12,6 +12,7 @@ import HoloTableView
 public extension HoloTableRowMaker {
     
     /// Diff id
+    @discardableResult
     func diffId(_ diffId: AnyHashable) -> Self {
         let row = self.fetchTableRow()
         row.diffId = diffId

@@ -33,7 +33,14 @@ public extension UITableView {
         updateData: (() -> Void)? = nil,
         completion: ((Bool) -> Void)? = nil) {
         
-        guard let section = self.holo_proxy.proxyData.section(withTag: sectionTag),
+        var targetSection: HoloTableSection? = nil
+        for item in self.holo_proxy.proxyData.sections {
+            if item.tag == sectionTag || (item.tag == nil && sectionTag == nil) {
+                targetSection = item
+                break
+            }
+        }
+        guard let section = targetSection,
               let index = self.holo_proxy.proxyData.sections.firstIndex(of: section) else {
             debugPrint("[HoloTableViewDiffPlugin] No found a section with the tag: \(sectionTag ?? "nil").")
             return

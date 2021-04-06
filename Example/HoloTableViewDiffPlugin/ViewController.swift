@@ -23,6 +23,12 @@ class ViewController: UIViewController {
     }
     
     @objc func reloadButtonAction() {
+        self.reloadWithMaker()
+//        self.reloadWithObject()
+    }
+    
+    
+    func reloadWithMaker() {
         self.tableView.holo_removeAllSections()
         self.tableView.holo_makeRows { (make) in
             DataSet.generateItems().forEach { (item) in
@@ -35,6 +41,28 @@ class ViewController: UIViewController {
         self.tableView.reload()
     }
     
+    func reloadWithObject() {
+        let section = HoloTableSection()
+        var rows = [HoloTableRow]()
+        DataSet.generateItems().forEach { (item) in
+            let row = HoloTableRow()
+            row.cell = TableViewCell.self
+            row.height = 80
+            row.willDisplayHandler = { (cell, model) in
+                guard let cell = cell as? TableViewCell else { return }
+                cell.configTitle("\(item)")
+            }
+            
+            row.diffId = item
+            rows.append(row)
+        }
+        section.rows = rows
+        self.tableView.holo_sections = [section]
+        self.tableView.reload()
+    }
+    
+    
+    // MARK: - lazy
     
     lazy var reloadButton: UIButton = {
         let _reloadButton = UIButton.init(type: .system)
