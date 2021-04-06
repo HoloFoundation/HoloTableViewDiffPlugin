@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoloTableViewDiffPlugin'
-  s.version          = '0.2.0'
+  s.version          = '1.0.0'
   s.summary          = 'A DeepDiff plugin for HoloTableView'
 
 # This description is used to generate tags and improve search results.
